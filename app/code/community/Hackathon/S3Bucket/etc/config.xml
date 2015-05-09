@@ -54,5 +54,20 @@
                 <class>Hackathon_S3Bucket_Helper</class>
             </hackathon_s3bucket>
         </helpers>
+
     </global>
+
+    <admin>
+        <events>
+            <catalog_product_media_save_before>
+                <observers>
+                    <hackathon_s3bucket>
+                        <class>hackathon_s3bucket/observer</class>
+                        <method>uploadMediaFiles</method>
+                    </hackathon_s3bucket>
+                </observers>
+            </catalog_product_media_save_before>
+        </events>
+    </admin>
+
 </config>
