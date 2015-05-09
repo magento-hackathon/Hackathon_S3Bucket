@@ -62,7 +62,7 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                             <sort_order>20</sort_order>
-                            <comment><![CDATA[Create an IAM user in Security Credentials -> Users in <a target="_blank" href="https://console.aws.amazon.com/iam/home#users">AWS Console</a>]]></comment>
+                            <comment><![CDATA[Create an IAM user in <a target="_blank" href="https://console.aws.amazon.com/iam/home#users">AWS Console</a>]]></comment>
                         </aws_access_key>
 
                         <aws_secret_key translate="label">
