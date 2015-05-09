@@ -32,6 +32,8 @@ class Hackathon_S3Bucket_Helper_Data extends Mage_Core_Helper_Abstract
 {
     const XML_PATH_AWS_REGION     = 'system/s3bucket/aws_region';
     const XML_PATH_S3_BUCKET      = 'system/s3bucket/aws_s3_bucketname';
+    const XML_PATH_AWS_ACCESS_KEY = 'system/s3bucket/aws_access_key';
+    const XML_PATH_AWS_SECRET_KEY = 'system/s3bucket/aws_secret_key';
 
     /**
      * Returns API endpoint based on region and bucket name
