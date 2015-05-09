@@ -28,6 +28,56 @@
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      http://mage-hackathon.de
  */ 
-class Hackathon_S3Bucket_Helper_Data extends Mage_Core_Helper_Abstract {
+class Hackathon_S3Bucket_Helper_Data extends Mage_Core_Helper_Abstract
+{
+    const XML_PATH_AWS_REGION     = 'system/s3bucket/aws_region';
+    const XML_PATH_S3_BUCKET      = 'system/s3bucket/aws_s3_bucketname';
+
+    /**
+     * Returns API endpoint based on region and bucket name
+     *
+     * @return bool|string
+     */
+    public function getEndpointUrl()
+    {
+        $awsRegion = Mage::getStoreConfig(self::XML_PATH_AWS_REGION);
+        $bucket = Mage::getStoreConfig(self::XML_PATH_S3_BUCKET);
+
+        if (empty($awsRegion) || empty($bucket)) {
+            return false;
+        }
+
+        return sprintf('https://s3-%s.amazonaws.com/%s', $awsRegion, $bucket);
+    }
+
+    /**
+     * Returns access key id
+     *
+     * @return bool|string
+     */
+    public function getAccessKeyId()
+    {
+        $awsAccessKey = Mage::getStoreConfig(self::XML_PATH_AWS_ACCESS_KEY);
+        if (empty($awsAccessKey)) {
+            return false;
+        }
+
+        return $awsAccessKey;
+    }
+
+    /**
+     * Returns secret access key
+     *
+     * @return bool|string
+     */
+    public function getSecretAccessKey()
+    {
+        $awsSecretKey = Mage::getStoreConfig(self::XML_PATH_AWS_SECRET_KEY);
+        if (empty($awsSecretKey)) {
+            return false;
+        }
+
+        return $awsSecretKey;
+    }
 
 }

@@ -55,7 +55,7 @@
                         </aws_region>
 
                         <aws_access_key translate="label">
-                            <label>AWS Access Key</label>
+                            <label>AWS Access Key Id</label>
                             <frontend_type>obscure</frontend_type>
                             <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
                             <show_in_default>1</show_in_default>
@@ -66,7 +66,7 @@
                         </aws_access_key>
 
                         <aws_secret_key translate="label">
-                            <label>AWS Secret Key</label>
+                            <label>AWS Secret Access Key</label>
                             <frontend_type>obscure</frontend_type>
                             <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
                             <show_in_default>1</show_in_default>
