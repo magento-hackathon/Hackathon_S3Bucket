@@ -57,17 +57,17 @@
 
     </global>
 
-    <admin>
+    <adminhtml>
         <events>
             <catalog_product_media_save_before>
                 <observers>
-                    <hackathon_s3bucket>
+                    <hackathon_s3bucket_media_upload>
                         <class>hackathon_s3bucket/observer</class>
                         <method>uploadMediaFiles</method>
-                    </hackathon_s3bucket>
+                    </hackathon_s3bucket_media_upload>
                 </observers>
             </catalog_product_media_save_before>
         </events>
-    </admin>
+    </adminhtml>
 
 </config>
