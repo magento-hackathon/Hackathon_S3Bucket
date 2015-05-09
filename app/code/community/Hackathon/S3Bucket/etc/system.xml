@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <s3bucket translate="label" module="hackathon_s3bucket">
+            <label>AWS S3</label>
+            <tab>service</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>500</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <credentials translate="label" module="hackathon_s3bucket">
+                    <label>S3 Bucket Credentials</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+
+                    </fields>
+                </credentials>
+            </groups>
+        </s3bucket>
+    </sections>
+</config>

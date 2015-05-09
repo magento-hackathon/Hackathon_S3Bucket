@@ -9,4 +9,4 @@
 
 ## Known Issues
 
-* [url=https://github.com/tpyo/amazon-s3-php-class]AWS S3 Library currently doesn't support v4 auth e.g. for Frankfurt region (see [url=https://github.com/tpyo/amazon-s3-php-class/issues/96]issue[/url] 
+* [url=https://github.com/tpyo/amazon-s3-php-class]AWS S3 Library[/url] currently doesn't support v4 auth e.g. for Frankfurt region (see [url=https://github.com/tpyo/amazon-s3-php-class/issues/96]issue[/url] 
