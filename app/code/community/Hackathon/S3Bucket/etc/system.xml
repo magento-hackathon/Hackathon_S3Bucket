@@ -62,6 +62,7 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                             <sort_order>20</sort_order>
+                            <comment><![CDATA[Create an IAM user in Security Credentials -> Users in <a target="_blank" href="https://console.aws.amazon.com/iam/home#users">AWS Console</a>]]></comment>
                         </aws_access_key>
 
                         <aws_secret_key translate="label">
@@ -81,8 +82,10 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                             <sort_order>40</sort_order>
+                            <comment><![CDATA[Create <a target="_blank" href="https://console.aws.amazon.com/s3/home">a new S3 bucket</a> or use existing one]]></comment>
                         </aws_s3_bucketname>
 
+                        <!--
                         <aws_s3_browser_caching_time translate="label">
                             <label>Browser Caching Time</label>
                             <frontend_type>text</frontend_type>
@@ -90,8 +93,9 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <sort_order>30</sort_order>
+                            <sort_order>50</sort_order>
                         </aws_s3_browser_caching_time>
+                        -->
 
                         <aws_s3_image_dimensions translate="label">
                             <label>Image Dimensions</label>
@@ -100,7 +104,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <sort_order>30</sort_order>
+                            <sort_order>60</sort_order>
                         </aws_s3_image_dimensions>
 
                         <customer_groups>
@@ -108,7 +112,7 @@
                             <frontend_type>select</frontend_type>
                             <comment>Should there be a copy of your media files on the host system?</comment>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>50</sort_order>
+                            <sort_order>70</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
