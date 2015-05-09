@@ -57,6 +57,7 @@
                         <aws_access_key translate="label">
                             <label>AWS Access Key</label>
                             <frontend_type>text</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -66,6 +67,7 @@
                         <aws_secret_key translate="label">
                             <label>AWS Secret Key</label>
                             <frontend_type>password</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
