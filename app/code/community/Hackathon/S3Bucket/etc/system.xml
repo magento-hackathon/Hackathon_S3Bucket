@@ -71,10 +71,30 @@
                             <sort_order>30</sort_order>
                         </aws_s3_bucketname>
 
+                        <aws_s3_browser_caching_time translate="label">
+                            <label>Browser Caching Time</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Time to cache the image in the browser. Leave blank to use etag/last-modified.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <sort_order>30</sort_order>
+                        </aws_s3_browser_caching_time>
+
+                        <aws_s3_image_dimensions translate="label">
+                            <label>Image Dimensions</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>asdfasdf</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <sort_order>30</sort_order>
+                        </aws_s3_image_dimensions>
+
                         <customer_groups>
-                            <label>SOME YES NO FIELD</label>
+                            <label>Keep your media files on the local system</label>
                             <frontend_type>select</frontend_type>
-                            <comment>Only enable if you have different price or layout for different customergroups.</comment>
+                            <comment>Should there be a copy of your media files on the host system?</comment>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>40</sort_order>
                             <show_in_default>1</show_in_default>
