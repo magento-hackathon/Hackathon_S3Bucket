@@ -36,20 +36,35 @@ class Hackathon_S3Bucket_Helper_Data extends Mage_Core_Helper_Abstract
     const XML_PATH_AWS_SECRET_KEY = 'system/s3bucket/aws_secret_key';
 
     /**
-     * Returns API endpoint based on region and bucket name
+     * Returns S3 endpoint based on region
      *
      * @return bool|string
      */
-    public function getEndpointUrl()
+    public function getEndpoint()
     {
         $awsRegion = Mage::getStoreConfig(self::XML_PATH_AWS_REGION);
-        $bucket = Mage::getStoreConfig(self::XML_PATH_S3_BUCKET);
 
-        if (empty($awsRegion) || empty($bucket)) {
+        if (empty($awsRegion)) {
             return false;
         }
 
-        return sprintf('https://s3-%s.amazonaws.com/%s', $awsRegion, $bucket);
+        return sprintf('s3-%s.amazonaws.com', $awsRegion);
+    }
+
+    /**
+     * Returns S3 bucket name
+     *
+     * @return bool|string
+     */
+    public function getBucket()
+    {
+        $bucket = Mage::getStoreConfig(self::XML_PATH_S3_BUCKET);
+
+        if (empty($bucket)) {
+            return false;
+        }
+
+        return $bucket;
     }
 
     /**

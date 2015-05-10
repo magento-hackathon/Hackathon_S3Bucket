@@ -29,11 +29,42 @@
  * @link      http://mage-hackathon.de
  */
 
+require_once 'AWS/S3.php';
+
+
 class Hackathon_S3Bucket_Model_Observer extends Varien_Object
 {
 
     function uploadMediaFiles($observer) {
-        Mage::log('hallo', null, 'bla.log', true);
+
+        $awsAccessKey = Mage::helper('hackathon_s3bucket')->getAccessKeyId();
+        $awsSecretKey = Mage::helper('hackathon_s3bucket')->getSecretAccessKey();
+
+        $awsEndPoint  = Mage::helper('hackathon_s3bucket')->getEndpoint();
+        $s3bucketName = Mage::helper('hackathon_s3bucket')->getBucket();
+
+        $productImages = $observer->getEvent()->getImages();
+        $ProductImagesMediaPath = Mage::getSingleton('catalog/product_media_config');
+
+
+        $s3 = new S3($awsAccessKey, $awsSecretKey);
+        $s3->setEndpoint($awsEndPoint);
+
+        foreach($productImages['images'] as $mediaFileName)
+        {
+
+            $productImagePath = $ProductImagesMediaPath->getMediaPath($mediaFileName['file']);
+
+
+            $s3->putObject(
+                $s3->inputFile($productImagePath, false),
+                $s3bucketName,
+                'media/catalog/product' . $mediaFileName['file'],
+                $s3::ACL_PUBLIC_READ);
+        }
+        
+
+
     }
 
 
