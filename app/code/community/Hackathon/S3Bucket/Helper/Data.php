@@ -68,6 +68,21 @@ class Hackathon_S3Bucket_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
+     * Returns region name
+     *
+     * @return bool|string
+     */
+    public function getRegion()
+    {
+        $regionName = Mage::getStoreConfig(self::XML_PATH_AWS_REGION);
+        if (empty($regionName)) {
+            return false;
+        }
+
+        return $regionName;
+    }
+
+    /**
      * Returns access key id
      *
      * @return bool|string
@@ -79,7 +94,7 @@ class Hackathon_S3Bucket_Helper_Data extends Mage_Core_Helper_Abstract
             return false;
         }
 
-        return $awsAccessKey;
+        return Mage::helper('core')->decrypt($awsAccessKey);
     }
 
     /**
@@ -94,7 +109,31 @@ class Hackathon_S3Bucket_Helper_Data extends Mage_Core_Helper_Abstract
             return false;
         }
 
-        return $awsSecretKey;
+        return Mage::helper('core')->decrypt($awsSecretKey);
+    }
+
+    /**
+     * Returns bucket name
+     *
+     * @return bool|string
+     */
+    public function getBucketName()
+    {
+        $bucketName = Mage::getStoreConfig(self::XML_PATH_S3_BUCKET);
+        if (empty($bucketName)) {
+            return false;
+        }
+
+        return $bucketName;
+    }
+
+    public function validateCredentials()
+    {
+        if (!$this->getRegion() || !$this->getAccessKeyId() || !$this->getSecretAccessKey() || !$this->getBucketName()) {
+            return false;
+        }
+
+        return true;
     }
 
 }
