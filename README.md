@@ -10,6 +10,7 @@
 ## Known Issues
 
 * [AWS S3 Library](https://github.com/tpyo/amazon-s3-php-class) currently doesn't support V4 auth e.g. for Frankfurt region (see [issue](https://github.com/tpyo/amazon-s3-php-class/issues/96))
+* Zend Framework used in Magento doesn't support V4 auth either
 
 ## Support
  
